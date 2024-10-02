@@ -1,0 +1,9 @@
+<h1>{{ question.question_text }}</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {% for answer in answers %}
+        <input type="radio" name="answer" value="{{ answer.id }}"> {{ answer.answer_text }}<br>
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
